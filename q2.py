@@ -26,10 +26,28 @@ def askUserChoice():
     # 1. Asks the user to enter their input (between 1 and 4)
     # 2. Checks that the user's input is valid. If it's not valid (if it's not between 1 and 4), then ask the user to re-enter their input.
     # 3. Once the user enters a valid input, return that input as an integer.
-
+    
+    valid = [1, 2, 3, 4]
+    userChoice = ''
+    while userChoice not in valid:
+        print('Choose a number of sticks to pick up (between 1 and 4):')
+        userChoice = int(input())
+        if userChoice not in valid:
+            print('Your choice is invalid, please try again:')
+            continue
+        else:
+            return int(userChoice)
+    
+    
 
 def subtractSticks( number ):
-    global sticks 
+    global sticks
+    int(number)
+    sticks = sticks - number
+    if sticks <=0:
+        return True
+    else:
+        return False
     
     # TODO: write code inside this function that:
     # 1. subtracts the parameter `number` from the global variable `sticks`
@@ -38,3 +56,5 @@ def subtractSticks( number ):
     
 def determineComputerChoice():
     # TODO: write code inside this function that returns an integer between 1 and 4, random chosen by the computer
+    computerChoice = random.randint(1,4)
+    return computerChoice
