@@ -6,13 +6,14 @@
 
 def computeMinimumPayment( balance ):
     if (balance * 0.021) > 10:
-        return round((balance * 0.021), 1)
-    
-    if (balance * 0.021) < 10:
-        return(10)
+        theMin = (balance * 0.021)
+    else:
+        theMin = 10
 
     if balance < 10:
-        return(balance)
+        theMin = balance
+
+    return round(theMin,1)
     
         
 
