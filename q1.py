@@ -5,12 +5,12 @@
 #   Example 4: if your balance is 8, then your program should return 8. 
 
 def computeMinimumPayment( balance ):
-    if (balance * 0.021) > 10:
-        theMin = (balance * 0.021)
+    if .021 * balance > 10:
+        theMin = .021 * balance
     else:
         theMin = 10
 
-    if balance < 10:
+    if theMin > balance:
         theMin = balance
 
     return round(theMin,1)
